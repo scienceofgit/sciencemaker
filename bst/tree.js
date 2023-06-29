@@ -194,6 +194,7 @@ if(tree)
 {
 tree.pos_x=x;
 tree.pos_y=y;
+var mb,nb;
 if(tree.left){mb=height(tree.left.right)}
 
 if(tree.right){nb=height(tree.right.left)}
