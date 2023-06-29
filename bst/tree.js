@@ -1,3 +1,7 @@
+/*
+This program is written by: Dipankar Kumar Roy(B.Sc in computer Sc.).
+COPYRIGHT:(student can use this program).
+*/
 class node //create node for tree
 {
     constructor(value,left,right,pos_x,pos_y)
@@ -190,8 +194,12 @@ if(tree)
 {
 tree.pos_x=x;
 tree.pos_y=y;
-n_plot(tree.left,parseFloat((tree.pos_x-right_h(tree.left)).toFixed(8)),parseFloat((tree.pos_y-1).toFixed(8)));
-n_plot(tree.right,parseFloat((tree.pos_x+left_h(tree.right)).toFixed(8)),parseFloat((tree.pos_y-1).toFixed(8)));
+if(tree.left){mb=height(tree.left.right)}
+
+if(tree.right){nb=height(tree.right.left)}
+
+n_plot(tree.left,parseFloat((tree.pos_x-right_h(tree.left)-mb).toFixed(8)),parseFloat((tree.pos_y-1).toFixed(8)));
+n_plot(tree.right,parseFloat((tree.pos_x+left_h(tree.right)+nb).toFixed(8)),parseFloat((tree.pos_y-1).toFixed(8)));
 }
 }
 function plot(tree,move_x,move_y)
